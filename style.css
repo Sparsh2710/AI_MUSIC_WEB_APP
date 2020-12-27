@@ -1,0 +1,33 @@
+body {
+    background-size: cover;
+}
+
+span {
+    font-size: 18px !important;
+    text-shadow: 2px 2px black;
+    font-family: 'Audiowide', cursive;
+}
+
+.heading {
+    letter-spacing: 2px;
+    font-family: 'Bungee Outline', cursive;
+    font-size: 25px;
+    margin: 0%;
+    width: 100%;
+    box-shadow: 5px 5px 15px white;
+}
+
+#song {
+    color: rgb(17, 44, 85);
+    box-shadow: 5px 5px 15px dodgerblue;
+    width: fit-content;
+    font-size: 23px;
+    font-family: 'Audiowide', cursive;
+}
+
+canvas {
+    margin-top: 10px;
+    border: solid 5px white;
+    border-radius: 20px;
+    box-shadow: 1px 1px 15px white;
+}
