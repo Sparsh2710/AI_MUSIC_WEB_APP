@@ -34,8 +34,9 @@ function modelLoaded() {
 function gotPoses(results) {
     if(results.length > 0) {
 	    console.log(results);
-	    scoreLeftWrist =  results[0].pose.keypoints[9].score;
-	    console.log("scoreLeftWrist = " + scoreLeftWrist);
+        scoreLeftWrist =  results[0].pose.keypoints[9].score;
+        scoreRightWrist =  results[0].pose.keypoints[10].score;
+	    console.log("scoreLeftWrist = " + scoreLeftWrist + " scoreRightWrist = " + scoreRightWrist);
 	
 	    rightWristX = results[0].pose.rightWrist.x;
 	    rightWristY = results[0].pose.rightWrist.y;
@@ -62,7 +63,20 @@ function draw() {
             song1.setVolume(1);
             song1.rate(1);
 
-            document.getElementById("song").innerHTML = "SONG - " + song1;
+            document.getElementById("song").innerHTML = "SONG - Animals";
+        }
+    }
+    
+    if(scoreRightWrist > 0.2) {
+        circle(rightWristX,rightWristY,20);
+        song1.isPlaying(false);
+
+        if(song2.isPlaying(false)) {
+            song2.play();
+            song2.setVolume(1);
+            song2.rate(1);
+
+            document.getElementById("song").innerHTML = "SONG - Cutting Shapes";
         }
 	}
 }
